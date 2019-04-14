@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="891fd535-0c19-4fd8-9f1c-650b6b39cc82" name="默认更改列表" comment="" />
+    <list default="true" id="891fd535-0c19-4fd8-9f1c-650b6b39cc82" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="2b933cca-e302-45fe-81de-1f3295b151c7" name="恢复:新增了评论功能" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding>
                 <element signature="e#44#85#0#PHP" expanded="true" />
               </folding>
@@ -320,6 +325,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="891fd535-0c19-4fd8-9f1c-650b6b39cc82" name="默认更改列表" comment="" />
+      <changelist id="2b933cca-e302-45fe-81de-1f3295b151c7" name="恢复:新增了评论功能" comment="" />
       <created>1554524728344</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -331,7 +337,7 @@
       <workItem from="1555126737327" duration="31000" />
       <workItem from="1555126830970" duration="239000" />
       <workItem from="1555226623758" duration="13784000" />
-      <workItem from="1555245040185" duration="3793000" />
+      <workItem from="1555245040185" duration="4633000" />
     </task>
     <task id="LOCAL-00001" summary="新项目提交">
       <created>1555228887313</created>
@@ -347,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555248715704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新提交">
+      <created>1555249626075</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555249626075</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53802000" />
+    <option name="totallyTimeSpent" value="54642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -411,7 +424,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新项目提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="新项目提交" />
+    <MESSAGE value="新提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="新提交" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
@@ -795,7 +809,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="e#44#85#0#PHP" expanded="true" />
           </folding>

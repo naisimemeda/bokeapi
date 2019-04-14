@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-
+    /**
+     * @param Articles $article
+     * @param CommentRequest $request
+     * @return mixed
+     */ 
     public function articleStore(Articles $article, CommentRequest $request) {
         $user_id = User::UserID();
         $data = [

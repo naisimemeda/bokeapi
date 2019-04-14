@@ -22,6 +22,9 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
     Route::post('/users','UserController@store')->name('users.store');
     //用户登录
     Route::post('/login','UserController@login')->name('users.login');
+
+
+    Route::get('articles/{article}','CommentController@show')->name('comment.show');
     Route::middleware('api.refresh')->group(function () {
         //当前用户信息
         Route::get('/users/info','UserController@info')->name('users.info');
@@ -41,12 +44,16 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
             Route::delete('/topics/{topics}','TopicController@destroy')->name('topic.delete');
             Route::patch('/topics/{topics}','TopicController@update')->name('topic.update');
         });
+
+
         //新增文章
         Route::post('/article','ArticleController@store')->name('article.store');
         //查询所有文章
         Route::get('/article','ArticleController@index')->name('article.store');
         //删除文章
         Route::delete('/article/{articles}','ArticleController@destroy')->name('article.delete');
+        //文章评论
+        Route::post('articles/{article}/comment','CommentController@articleStore')->name('comment.store');
 
     });
 });

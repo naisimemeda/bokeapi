@@ -37,7 +37,7 @@ class UserController extends Controller
     //用户登录
     public function login(Request $request){
         $token  = Auth::guard('api')->attempt(['name'=>$request->name,'password'=>$request->password]);
-        $user_id = Auth::guard('api')->user()->id;
+        $user_id = User::UserID();
         if($token){
             return $this->setStatusCode(201)->success(['token' => 'bearer ' . $token,'id' => $user_id]);
         }
@@ -51,7 +51,7 @@ class UserController extends Controller
 
 
     public function info(){
-        $user = Auth::guard('api')->user();
+        $user = User::UserInfo();
         return $this->success(new UserResource($user));
     }
 }

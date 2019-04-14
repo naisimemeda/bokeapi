@@ -12,7 +12,8 @@ class ArticleController extends Controller
 {
     //
     public function index(Articles $articles){
-        $articles = Articles::with('user:id,name','topics:id,name')->get();
+
+        $articles = Articles::with('user:id,name','topics:id,name', 'comments')->get();
         return $this->success($articles);
     }
 

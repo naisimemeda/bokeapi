@@ -19,7 +19,7 @@ class CommentController extends Controller
     public function articleStore(Articles $article, CommentRequest $request) {
         $user_id = User::UserID();
         $data = [
-            'content' => $request['content'],
+            'content' => $request->get('content'),
             'user_id' => $user_id,
         ];
         $id = $article->comments()->create($data)->id;

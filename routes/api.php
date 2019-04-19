@@ -22,7 +22,6 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
     Route::post('/users','UserController@store')->name('users.store');
     //用户登录
     Route::post('/login','UserController@login')->name('users.login');
-    Route::post('/verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
 
 
     Route::get('articles/{article}','CommentController@show')->name('comment.show');

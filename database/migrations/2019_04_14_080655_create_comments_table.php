@@ -17,9 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('content')->comment('评论内容');
             $table->integer('user_id')->comment('用户id');
-
             $table->morphs('commentable');
-
             $table->timestamps();
         });
     }

@@ -21,7 +21,6 @@ class CommentController extends Controller
         return $this->setStatusCode(200)->success($id);
     }
 
-    //消息通知 邮件通知 队列执行
     public function show(Articles $article){
         return $this->setStatusCode(200)->success($article->comments);
     }

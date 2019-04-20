@@ -41,6 +41,11 @@ class UserRequest extends FormRequest
                 }
             case 'PUT':
             case 'PATCH':
+                {
+                    return [
+                        'avatar' => 'mimes:jpeg,bmp,png,gif|dimensions:min_width=208,min_height=208',
+                    ];
+                }
             case 'DELETE':
             default:
                 {
@@ -64,6 +69,8 @@ class UserRequest extends FormRequest
             'password.min' => '密码长度不能小于6个字符',
             'verification_key' => '短信验证码 key',
             'code' => '短信验证码',
+            'avatar.mimes' =>'头像必须是 jpeg, bmp, png, gif 格式的图片',
+            'avatar.dimensions' => '图片的清晰度不够，宽和高需要 208px 以上',
         ];
     }
 }

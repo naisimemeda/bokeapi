@@ -41,7 +41,9 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
         //用户退出
         Route::get('/logout','UserController@logout')->name('users.logout');
         //用户删除
-        Route::delete('/delete/{user}','UserController@delete')->name('users.delete');
+        Route::delete('/users/delete/{user}','UserController@delete')->name('users.delete');
+        //用户修改资料
+        Route::post('/users/{user}','UserController@update')->name('users.update');
 
         //话题
         Route::middleware('topic')->group(function () {

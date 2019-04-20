@@ -18,4 +18,7 @@ class UserPolicy
     public function delete(User $currentUser,User $user){
         return $currentUser->is_admin === 1 || $currentUser->id !== $user->id ;
     }
+    public function update(User $currentUser,User $user){
+        return $currentUser->id === $user->id ;
+    }
 }

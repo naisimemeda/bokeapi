@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\Api\AuthRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\Api\UserResource;
@@ -68,6 +69,20 @@ class UserController extends Controller
     public function info(){
         $user = User::UserInfo();
         return $this->success(new UserResource($user));
+    }
+
+    public function update(Request $request,User $user,ImageUploadHandler $uploader){
+        $data = $request->all();
+        if($request->avatar){
+            $request = $uploader->save($request->avatar,'avatars',$user->id,416);
+            if($request){
+                $data['avatar'] = $request['path'];
+                $this->authorize('update',$user);
+                $user->update($data);
+                return $this->success($data);
+            }
+        }
+
     }
 
 

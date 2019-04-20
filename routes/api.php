@@ -22,8 +22,11 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
     Route::post('/users','UserController@store')->name('users.store');
     //用户登录
     Route::post('/login','UserController@login')->name('users.login');
-    Route::get('/pictureCode','UserController@pictureCode')->name('users.Code');
-    Route::post('/yz','UserController@yz')->name('users.yz');
+    //获取图片验证码
+    Route::get('/VerifyCode','CaptchasController@VerifyCode')->name('Captcha.VerifyCode');
+    //核实验证码
+    Route::post('/Verify','CaptchasController@Verify')->name('Captcha.Verify');
+    //请求短信验证码
     Route::post('/verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
 
 

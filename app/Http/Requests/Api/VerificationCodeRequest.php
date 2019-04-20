@@ -21,4 +21,11 @@ class VerificationCodeRequest extends FormRequest
             ]
         ];
     }
+    public function messages()
+    {
+        return [
+            'phone.required'=>'手机号必须填写',
+            'phone.unique'=>'手机号存在',
+        ];
+    }
 }

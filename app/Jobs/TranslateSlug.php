@@ -15,18 +15,20 @@ class TranslateSlug implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     public $tries = 3;
     public $phone;
-    public function __construct($phone)
+    public $code;
+    public function __construct($phone,$code)
     {
         $this->phone = $phone;
+        $this->code = $code;
     }
 
     public function handle(EasySms $easySms)
     {
         try {
             $easySms->send($this->phone, [
-                'template' => 'SMS_156990210',
+                'template' => 'SMS_163853034',
                 'data' => [
-                    'code' => 6666
+                    'code' => $this->code
                 ]
             ],['aliyun']);
         } catch (\Overtrue\EasySms\Exceptions\NoGatewayAvailableException $exception) {

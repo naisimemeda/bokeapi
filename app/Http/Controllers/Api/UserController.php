@@ -6,6 +6,7 @@ use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\Api\AuthRequest;
 use App\Http\Requests\Api\UserRequest;
 use App\Http\Resources\Api\UserResource;
+use App\Jobs\VerifyMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ class UserController extends Controller
             return $this->setStatusCode(422)->success('验证码已失效');
         }
         if (!hash_equals($verifyData['code'], $request->code)) {
-            $this->setStatusCode(200)->success('验证码错误');
+            return $this->setStatusCode(200)->success('验证码错误');
         }
         User::create([
             'name' => $request->name,
@@ -87,13 +88,30 @@ class UserController extends Controller
     }
 
 
-    public function MaliSend(){
-        $name = '奈斯';
-        $view = 'emails.registered';
-            Mail::send($view,['name'=>$name],function($message){
-                $to = '1759307013@qq.com';
-                $message ->to($to)->subject('邮件测试');
-            });
+    public function MailSend(Request $request){
+        $request->validate([
+            'email' => 'required|email|unique:users',
+        ]);
+        $code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
+        $to = strtolower(trim($request->email));
+        $subject = "感谢注册 ！请确认你的邮箱。";
+        $expiredAt = now()->addMinutes(5);
+        $key = 'MailCode_'.str_random(15);
+        dispatch(new VerifyMail($code,$to,$subject))->onQueue('emails');
+        Cache::put($key, ['code' => $code], $expiredAt);
+        return $this->setStatusCode(200)->success(['email_key' => $key,'expired_at' => $expiredAt->toDateTimeString()]);
+    }
+
+    public function VerifyMail(Request $request){
+            $verifyData = Cache::get($request->email_key);
+        if (!$verifyData) {
+            return $this->setStatusCode(401)->success('邮箱验证码已失效');
+        }
+        if (!hash_equals($verifyData['code'], $request->code)) {
+            return $this->setStatusCode(401)->success('邮箱验证码错误');
+        }
+        Cache::forget($request->email_key);
+        return $this->setStatusCode(201)->success('成功');
     }
 
 

@@ -18,7 +18,7 @@ class VerificationCodesController extends Controller
         if (!app()->environment('production')) {
             $code = '1234';
         }else{
-            dispatch(new TranslateSlug($phone));
+            dispatch(new TranslateSlug($phone))->onQueue('phone');
         }
         $key = 'verificationCode_'.str_random(15);
         $expiredAt = now()->addMinutes(10);

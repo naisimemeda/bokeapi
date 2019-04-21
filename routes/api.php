@@ -29,7 +29,9 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
     //请求短信验证码
     Route::post('/verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
     //邮箱发送
-    Route::post('mail/send','UserController@MaliSend')->name('user.mail');
+    Route::post('mail/send','UserController@MailSend')->name('user.mail');
+    //邮箱验证
+    Route::post('mail/verifymail','UserController@VerifyMail')->name('user.verifymail');
     Route::middleware('api.refresh')->group(function () {
         //当前用户信息
         Route::get('/users/info','UserController@info')->name('users.info');

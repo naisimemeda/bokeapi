@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -83,6 +84,16 @@ class UserController extends Controller
             }
         }
 
+    }
+
+
+    public function MaliSend(){
+        $name = '奈斯';
+        $view = 'emails.registered';
+            Mail::send($view,['name'=>$name],function($message){
+                $to = '1759307013@qq.com';
+                $message ->to($to)->subject('邮件测试');
+            });
     }
 
 

@@ -28,9 +28,8 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
     Route::post('/Verify','CaptchasController@Verify')->name('Captcha.Verify');
     //请求短信验证码
     Route::post('/verificationCodes','VerificationCodesController@store')->name('api.verificationCodes.store');
-
-
-    Route::get('articles/{article}','CommentController@show')->name('comment.show');
+    //邮箱发送
+    Route::post('mail/send','UserController@MaliSend')->name('user.mail');
     Route::middleware('api.refresh')->group(function () {
         //当前用户信息
         Route::get('/users/info','UserController@info')->name('users.info');
@@ -62,6 +61,8 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
         Route::delete('/article/{articles}','ArticleController@destroy')->name('article.delete');
         //文章评论
         Route::post('articles/{article}/comment','CommentController@articleStore')->name('comment.store');
+        //获取某篇文章下的评论
+        Route::get('articles/{article}','CommentController@show')->name('comment.show');
 
     });
 });

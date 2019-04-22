@@ -70,4 +70,5 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
     {
         return $this->hasOne('App\Comment');
     }
+
 }

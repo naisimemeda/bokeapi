@@ -8,7 +8,7 @@ class Notice extends Model
 {
     //
     public $fillable = [
-        'uid','receive_id',
+        'uid','receive_id','comment_id'
     ];
 
     public function noticetable()

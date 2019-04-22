@@ -20,7 +20,7 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         'App\Events\CommentNotice'=> [
-            'App\Lisenter\CommentNotice',
+            'App\Lisenter\CommentNotices',
         ]
     ];
 

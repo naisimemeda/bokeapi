@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\CommentNotice;
 use App\Http\Requests\Api\CommentRequest;
-use App\Lisenter\CommentNotices;
 use App\Models\Articles;
 use App\Models\Comment;
 use App\Models\Notice;
@@ -19,16 +19,9 @@ class CommentController extends Controller
             'content' => $request->get('content'),
             'user_id' => $user_id,
         ];
-//        event(new CommentNotices());
         $id = $article->comments()->create($data)->id;
-        $notice_data = [
-            'uid' => $user_id,
-            'receive_id' => 4,
-            'comment_id' => $id,
-        ];
-        $aaa = $article->notices()->create($notice_data);
-        dd($aaa);
-        return $this->setStatusCode(200)->success($aaa);
+        event(new CommentNotice($user_id,$id,$article));
+        return $this->setStatusCode(200)->success('评论成功');
     }
 
     public function show(Articles $article){

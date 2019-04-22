@@ -14,14 +14,14 @@ class CommentNotice
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * Create a new event instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $user_id;
+    public $article;
+    public $id;
+    public function __construct($user_id,$id,$article)
     {
-        //
+        $this->user_id = $user_id;
+        $this->id = $id;
+        $this->article = $article;
     }
 
     /**

@@ -4,17 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Notice extends Model
 {
     //
     public $fillable = [
-        'content','user_id','article_id'
+        'uid','receive_id',
     ];
 
-    public function commentable()
+    public function noticetable()
     {
         return $this->morphTo();
     }
-
-
 }

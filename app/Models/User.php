@@ -66,14 +66,14 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
         return  Auth::guard('api')->user()->id;
     }
 
-    public function ArticleName()
-    {
-        return $this->hasOne('App\Comment');
-    }
+//    public function ArticleName()
+//    {
+//        return $this->hasOne('App\Comment');
+//    }
 
 
     public function notice()
     {
-        return $this->hasMany(Notice::class,'uid');
+        return $this->hasMany(Notice::class,'receive_id');
     }
 }

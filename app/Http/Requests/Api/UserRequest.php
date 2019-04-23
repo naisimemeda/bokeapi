@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
             case 'POST':
                 {
                     return [
-                        'name' => ['required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name'],
+                        'name' => ['required'],
                         'password' => ['required', 'max:16', 'min:6'],
                         'verification_key' => 'required|string',
                         'code' => 'required|string',

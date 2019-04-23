@@ -31,8 +31,8 @@ class CommentController extends Controller
 
     public function delete(Comment $comment){
         $this->authorize('delete',$comment);
-        $data = $comment->article();
-//        $comment->delete();
-        return $this->setStatusCode(200)->success('删除成功');
+        $data = Articles::find($comment->commentable_id)->decrement('comment_count');
+        $comment->delete();
+        return $this->setStatusCode(200)->success($data);
     }
 }

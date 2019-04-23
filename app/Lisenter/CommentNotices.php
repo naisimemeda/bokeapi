@@ -6,7 +6,7 @@ use App\Events\CommentNotice;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CommentNotices implements ShouldQueue
+class CommentNotices
 {
     public $connection = 'redis';
     public $queue = 'notice';
@@ -24,5 +24,6 @@ class CommentNotices implements ShouldQueue
         ];
         $event->article->notices()->create($notice_data);
         $event->article->increment('comment_count');
+          $articleUser->increment('notice_count');
     }
 }

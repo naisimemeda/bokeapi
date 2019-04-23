@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Models\Notice;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoticeController extends Controller
 {
     public function show(){
-        $user = User::UserInfo();
-        $data = $user->notice();
+        $id = User::UserID();
+        $data = User::find($id)->notice()->get();
         return $this->setStatusCode(200)->success($data);
     }
     public function destroy(Notice $notice){

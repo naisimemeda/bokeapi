@@ -18,6 +18,6 @@ class Comment extends Model
 
     public function article()
     {
-        return $this->belongsTo(Articles::class);
+        return $this->belongsTo(Articles::class,'commentable');
     }
 }

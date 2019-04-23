@@ -8,7 +8,7 @@ class Articles extends Model
 {
     //
     protected $fillable = [
-        'name', 'topics_id' , 'user_id'
+        'name', 'topics_id' , 'user_id','comment_count'
     ];
 
     public function topics(){

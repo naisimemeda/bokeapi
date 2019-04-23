@@ -29,10 +29,10 @@ class CommentController extends Controller
     }
 
 
-    public function delete(CommentRequest $request,Comment $comment){
+    public function delete(Comment $comment){
         $this->authorize('delete',$comment);
-        $comment->delete();
-        $comment->article()->decrement('comment_count');
+        $data = $comment->article();
+//        $comment->delete();
         return $this->setStatusCode(200)->success('删除成功');
     }
 }

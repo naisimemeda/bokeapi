@@ -19,7 +19,7 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
     protected $table = 'users';
 
     protected $fillable = [
-        'name', 'password' ,'phone','email','avatar'
+        'name', 'password' ,'phone','email','avatar','notice_count'
     ];
 
     protected $hidden = [
@@ -74,6 +74,6 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
 
     public function notice()
     {
-        return $this->hasMany('App\Notice','uid');
+        return $this->hasMany(Notice::class,'uid');
     }
 }

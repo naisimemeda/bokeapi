@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30ecad32-9b9a-4fb9-92c4-643e880c9277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Lisenter/CommentNotices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lisenter/CommentNotices.php" afterDir="false" />
@@ -11,6 +12,8 @@
       <change beforePath="$PROJECT_DIR$/app/Policies/NoticePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/NoticePolicy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_06_052151_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_06_052151_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_07_114259_create_articles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_07_114259_create_articles_table.php" afterDir="false" />
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +29,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="217">
               <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+=======
+            <state relative-caret-position="500">
+              <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+              <folding>
+                <element signature="e#44#73#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/CommentRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-279">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -50,6 +70,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,7 +92,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/app/Events/CommentNotice.php">
+=======
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationCodesController.php">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4">
               <caret line="14" column="61" lean-forward="true" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
@@ -88,7 +121,18 @@
       <find>UnauthorizedHttpException::</find>
       <find>ttl</find>
       <find>ApiResponse</find>
+<<<<<<< Updated upstream
       <find>ArticleName</find>
+=======
+      <find>MAIL_DRIVER</find>
+      <find>Showing user profile for user</find>
+      <find>$easySms</find>
+      <find>up</find>
+      <find>driver</find>
+      <find>MAIL_FROM_ADDRESS</find>
+      <find>FROM</find>
+      <find>delete</find>
+>>>>>>> Stashed changes
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,9 +192,18 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_04_06_052151_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/app/Lisenter/CommentNotices.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" />
         <option value="$PROJECT_DIR$/app/Models/Comment.php" />
+=======
+        <option value="$PROJECT_DIR$/app/Models/Notice.php" />
+        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Events/CommentNotice.php" />
+        <option value="$PROJECT_DIR$/config/horizon.php" />
+        <option value="$PROJECT_DIR$/app/Lisenter/CommentNotices.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -316,7 +369,17 @@
             <path>
               <item name="bokeapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="bokeapi" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
               <item name="database" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Lisenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bokeapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bokeapi" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
           </expand>
           <select />
@@ -381,11 +444,21 @@
       <workItem from="1555126830970" duration="239000" />
       <workItem from="1555226623758" duration="13784000" />
       <workItem from="1555245040185" duration="4633000" />
+<<<<<<< Updated upstream
       <workItem from="1555293527274" duration="562000" />
       <workItem from="1555294122153" duration="3324000" />
       <workItem from="1555313817630" duration="1625000" />
       <workItem from="1556000810589" duration="2936000" />
       <workItem from="1556009151364" duration="1267000" />
+=======
+      <workItem from="1555733231860" duration="19573000" />
+      <workItem from="1555765687446" duration="6996000" />
+      <workItem from="1555821136117" duration="3269000" />
+      <workItem from="1555829474647" duration="6835000" />
+      <workItem from="1555852293617" duration="1550000" />
+      <workItem from="1555854101157" duration="3751000" />
+      <workItem from="1555933777044" duration="8185000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="新项目提交">
       <created>1555228887313</created>
@@ -412,7 +485,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="64648000" />
+=======
+    <option name="totallyTimeSpent" value="104932000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1047" extended-state="0" />
@@ -534,6 +611,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -542,6 +620,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Api/TopicMiddleware.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/VerificationCodeRequest.php">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
@@ -699,6 +780,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/Models/Topics.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -721,6 +803,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/TopicPolicy.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
@@ -826,6 +911,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -834,6 +920,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/NoticeController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/Events/CommentNotice.php">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
@@ -868,6 +957,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/CommentRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-279">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+          <folding>
+            <element signature="e#44#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="25" />
         </state>
       </provider>
     </entry>

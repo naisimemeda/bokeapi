@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->text('name')->comment('内容');
             $table->integer('topics_id')->comment('分类id');
             $table->integer('user_id')->comment('用户id');
+            $table->integer('comment_count')->comment('评论数量');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

@@ -74,6 +74,6 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
 
     public function notice()
     {
-        return $this->hasMany('App\Notice');
+        return $this->hasMany('App\Notice','uid');
     }
 }

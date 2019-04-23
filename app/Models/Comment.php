@@ -16,5 +16,8 @@ class Comment extends Model
         return $this->morphTo();
     }
 
-
+    public function article()
+    {
+        return $this->belongsTo(Articles::class);
+    }
 }

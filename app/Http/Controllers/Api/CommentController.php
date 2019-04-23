@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-    public function articleStore(Articles $article, CommentRequest $request,Comment $comment) {
+    public function articleStore(Articles $article, CommentRequest $request) {
         $user_id = User::UserID();
         $data = [
             'content' => $request->get('content'),
@@ -32,6 +32,7 @@ class CommentController extends Controller
     public function delete(CommentRequest $request,Comment $comment){
         $this->authorize('delete',$comment);
         $comment->delete();
+        $comment->article()->decrement('comment_count');
         return $this->setStatusCode(200)->success('删除成功');
     }
 }

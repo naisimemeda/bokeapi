@@ -10,7 +10,7 @@ class NoticePolicy
 {
     use HandlesAuthorization;
 
-    public function update(User $currentUser,Notice $notice){
+    public function delete(User $currentUser,Notice $notice){
         return $currentUser->id === $notice->receive_id;
     }
 }

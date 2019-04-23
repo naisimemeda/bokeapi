@@ -23,5 +23,6 @@ class CommentNotices implements ShouldQueue
             'comment_id' => $event->id,
         ];
         $event->article->notices()->create($notice_data);
+        $event->article->increment('comment_count');
     }
 }

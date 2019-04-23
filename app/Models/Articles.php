@@ -23,4 +23,8 @@ class Articles extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    public function notices(){
+        return $this->morphMany(Notice::class, 'noticetable');
+    }
 }

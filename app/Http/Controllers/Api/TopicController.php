@@ -15,7 +15,6 @@ class TopicController extends Controller
         return $this->setStatusCode(200)->success($topic);
     }
 
-
     public function store(TopicRequest $request){
         Topics::create($request->all());
         return $this->setStatusCode(200)->success('添加话题成功');

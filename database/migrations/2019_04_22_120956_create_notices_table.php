@@ -18,6 +18,7 @@ class CreateNoticesTable extends Migration
             $table->integer('uid')->comment('发送人id');
             $table->integer('receive_id')->comment('接收人id');
             $table->integer('comment_id')->comment('评论id');
+            $table->integer('status')->default(0)->comment('评论id');
             $table->morphs('noticetable');
             $table->timestamps();
         });

@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'id'=>$this->id,
             'name' => $this->name,
             'status' => User::getStatusName($this->status),
+            'notice_count' => $this->notice_count,
             'created_at'=>(string)$this->created_at,
             'updated_at'=>(string)$this->updated_at
         ];

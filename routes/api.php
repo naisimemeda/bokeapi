@@ -64,8 +64,10 @@ Route::namespace('Api')->prefix('home')->middleware('cors')->group(function () {
         Route::post('articles/{article}/comment','CommentController@articleStore')->name('comment.store');
         //获取某篇文章下的评论
         Route::get('articles/{article}','CommentController@show')->name('comment.show');
-        //查看当前人的所有通知
+        //查询当前人的所有通知
         Route::get('/notice','NoticeController@show')->name('notice.show');
+        //查看当前人的通知
+        Route::get('/see/notice','NoticeController@SeeNotice')->name('notice.see');
         //删除评论
         Route::delete('/comment/delete/{comment}','CommentController@delete')->name('comment.delete');
     });

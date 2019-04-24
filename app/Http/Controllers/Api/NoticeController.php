@@ -19,4 +19,11 @@ class NoticeController extends Controller
         $notice->delete();
         return $this->setStatusCode(200)->success('删除通知成功');
     }
+
+    public function SeeNotice(){
+        $user = User::UserInfo();
+        $user->notice_count = 0;
+        $user->save();
+        return $this->setStatusCode(200)->success('成功');
+    }
 }

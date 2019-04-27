@@ -158,6 +158,7 @@ return [
             'image' => 'images',
             'file'  => 'files',
         ],
+
     ],
 
     /*

@@ -2,15 +2,16 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\User;
+use App\Models\Topics;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Encore\Admin\Widgets\Table;
 
-class UserController extends Controller
+class TopicController extends Controller
 {
     use HasResourceActions;
 
@@ -20,7 +21,6 @@ class UserController extends Controller
      * @param Content $content
      * @return Content
      */
-
     public function index(Content $content)
     {
         return $content
@@ -80,21 +80,19 @@ class UserController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new User);
+        $grid = new Grid(new Topics);
+
         $grid->id('Id');
-        $grid->name('姓名');
-        $grid->avatar('头像')->image(config('app.url/uploads/'));
-        $grid->status('Status')->display(function ($status){
-            return User::getStatusName($status);
+        $grid->name('标题')->modal('ss',function ($model){
+            $articles = $model->articles()->take(10)->get()->map(function ($comment) {
+                return $comment->only(['id', 'name', 'created_at']);
+            });
+            return new Table(['ID', 'name', '发布时间'], $articles->toArray());
         });
-        $grid->is_admin('管理员')->display(function ($is_admin){
-            return $is_admin === 1 ? '是' : '否';
-        });
-        $grid->phone('电话');
-        $grid->email('邮箱');
-        $grid->notice_count('通知数量');
-        $grid->created_at('创建时间');
-        $grid->updated_at('修改时间');
+        $grid->status('Status');
+        $grid->created_at('Created at');
+        $grid->updated_at('Updated at');
+
         return $grid;
     }
 
@@ -106,16 +104,13 @@ class UserController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(User::findOrFail($id));
-        $show->name('姓名');
-        $show->status('状态');
-        $show->is_admin('权限');
+        $show = new Show(Topics::findOrFail($id));
+
+        $show->id('Id');
+        $show->name('Name');
+        $show->status('Status');
         $show->created_at('Created at');
         $show->updated_at('Updated at');
-        $show->phone('Phone');
-        $show->email('Email');
-        $show->avatar('Avatar');
-        $show->notice_count('Notice count');
 
         return $show;
     }
@@ -127,14 +122,11 @@ class UserController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new User);
+        $form = new Form(new Topics);
+
         $form->text('name', 'Name');
-        $form->select('status', 'Status')->options([1 => '是']);
-        $form->radio('is_admin', 'Is admin')->options([ 1 => '是', 0 => '否']);
-        $form->mobile('phone', 'Phone');
-        $form->email('email', 'Email');
-        $form->image('avatar', 'Avatar');
-        $form->number('notice_count', 'Notice count');
+        $form->number('status', 'Status')->default(1);
+
         return $form;
     }
 }

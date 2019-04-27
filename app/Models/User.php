@@ -13,8 +13,8 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
 {
     use Notifiable,MustVerifyEmailTrait;
     const INVALID = -1; //已删除
-    const NORMAL = 0; //正常
-    const FREEZE = 1;
+    const NORMAL = 0; //冻结
+    const FREEZE = 1; //正常
     const ADMIN = 1;
     protected $table = 'users';
 
@@ -39,9 +39,9 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
         switch ($status){
             case self::INVALID:
                 return '已删除';
-            case self::NORMAL:
-                return '正常';
             case self::FREEZE:
+                return '正常';
+            case self::NORMAL:
                 return '冻结';
             default:
                 return '正常';
@@ -76,4 +76,6 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
     {
         return $this->hasMany(Notice::class,'receive_id');
     }
+
+
 }

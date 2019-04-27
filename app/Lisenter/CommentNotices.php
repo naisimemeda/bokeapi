@@ -24,6 +24,6 @@ class CommentNotices
         ];
         $event->article->notices()->create($notice_data);
         $event->article->increment('comment_count');
-          $articleUser->increment('notice_count');
+        $articleUser->increment('notice_count');
     }
 }

@@ -51,7 +51,6 @@ class UserController extends Controller
         return $this->setStatusCode(200)->success('删除用户成功');
     }
 
-
     //用户登录
     public function login(AuthRequest $request){
         $token  = Auth::guard('api')->attempt(['name'=>$request->username,'password'=>$request->password]);
@@ -84,7 +83,6 @@ class UserController extends Controller
                 return $this->success($data);
             }
         }
-
     }
 
 

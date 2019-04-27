@@ -31,6 +31,7 @@ $app->singleton(
     App\Http\Kernel::class
 );
 
+$app->register(Overtrue\LaravelLang\TranslationServiceProvider::class);
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class

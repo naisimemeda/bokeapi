@@ -2,15 +2,17 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\User;
+use App\Models\Articles;
 use App\Http\Controllers\Controller;
+use App\Models\Topics;
+use App\Models\User;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class UserController extends Controller
+class ArticleController extends Controller
 {
     use HasResourceActions;
 
@@ -20,7 +22,6 @@ class UserController extends Controller
      * @param Content $content
      * @return Content
      */
-
     public function index(Content $content)
     {
         return $content
@@ -80,23 +81,17 @@ class UserController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new User);
-        $grid->id('Id')->sortable();
+        $grid = new Grid(new Articles);
+
+        $grid->id('Id');
         $grid->name('姓名');
-        $grid->avatar('头像')->image(config('app.url/uploads/'));
-        $grid->phone('电话');
-        $grid->email('邮箱');
-        $grid->is_admin('是否为管理员')->switch([
-            '是'  => ['value' => 1, 'text' => '是', 'color' => 'primary'],
-            '否' => ['value' => 0, 'text' => '否', 'color' => 'default'],
-        ]);
-        $grid->status('状态')->using([1 => '是', 0 => '否']);
-        $grid->notice_count('通知数量');
-        $grid->created_at('创建时间');
-        $grid->updated_at('修改时间');
-        $grid->filter(function($filter){
-            $filter->like('name', 'name');
-        });
+        $grid->topics()->name('分类');
+        $grid->user()->name('用户');
+        $grid->status('Status');
+        $grid->created_at('Created at');
+        $grid->updated_at('Updated at');
+        $grid->comment_count('Comment count');
+
         return $grid;
     }
 
@@ -108,16 +103,16 @@ class UserController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(User::findOrFail($id));
-        $show->name('姓名');
-        $show->status('状态');
-        $show->is_admin('权限');
+        $show = new Show(Articles::findOrFail($id));
+
+        $show->id('Id');
+        $show->name('Name');
+        $show->topics_id('Topics id');
+        $show->user_id('User id');
+        $show->status('Status');
         $show->created_at('Created at');
         $show->updated_at('Updated at');
-        $show->phone('Phone');
-        $show->email('Email');
-        $show->avatar('Avatar');
-        $show->notice_count('Notice count');
+        $show->comment_count('Comment count');
 
         return $show;
     }
@@ -129,14 +124,13 @@ class UserController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new User);
+        $form = new Form(new Articles);
+
         $form->text('name', 'Name');
-        $form->switch('status', 'Status')->options([ 1 => '是', 0 => '否']);
-        $form->switch('is_admin', 'Is admin');
-        $form->mobile('phone', 'Phone');
-        $form->email('email', 'Email');
-        $form->image('avatar', 'Avatar');
-        $form->number('notice_count', 'Notice count');
+        $form->select('topics_id', '分类')->options (Topics::getSelectName());
+        $form->select('user_id', '用户')->options (User::getSelectUser());
+        $form->number('status', 'Status')->default(1);
+        $form->number('comment_count', 'Comment count');
         return $form;
     }
 }

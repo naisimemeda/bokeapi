@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
+use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject , MustVerifyEmailContract
@@ -77,5 +78,13 @@ class User extends Authenticatable implements JWTSubject , MustVerifyEmailContra
         return $this->hasMany(Notice::class,'receive_id');
     }
 
+    public static function getSelectUser(){
+        $data = DB::table('users')->select('id','name as text')->get();
+        $selectOption = [];
+        foreach ($data as $option){
+            $selectOption[$option->id] = $option->text;
+        }
+        return $selectOption;
+    }
 
 }
